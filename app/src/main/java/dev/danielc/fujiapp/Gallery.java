@@ -117,10 +117,10 @@ public class Gallery extends AppCompatActivity {
                     return;
                 }
 
-                Backend.print("进入相片库...");
+                Backend.print("进入照片库...");
                 rc = Backend.cFujiConfigImageGallery();
                 if (rc != 0) {
-                    fail(rc, "无法启动相片库");
+                    fail(rc, "无法启动照片库");
                     return;
                 }
 

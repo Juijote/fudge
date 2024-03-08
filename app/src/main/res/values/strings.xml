@@ -23,11 +23,11 @@
     <string name="help_test14">Beta 测试: @spaqin, @matthias, @nutter</string>
     <string name="downloading_image">正在下载图像...</string>
     <string name="connecting">正在连接...</string>
-    <string name="dimensions">相片大小</string>
+    <string name="dimensions">照片大小</string>
     <string name="filesize">文件大小</string>
     <string name="alreadydownloaded">文件已下载</string>
     <string name="regressiontesting">回归测试</string>
-    <string name="gallery">相片库</string>
+    <string name="gallery">照片库</string>
     <string name="getImages2">也许只有 RAW 文件？富士不允许通过 WiFi 查看 RAW:(</string>
     <string name="noImages1">相机上没有可用图像。</string>
 
