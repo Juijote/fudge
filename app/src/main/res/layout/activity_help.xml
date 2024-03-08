@@ -93,6 +93,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/help_text101" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <!-- 汉化相关 End -->
 
             <TextView
