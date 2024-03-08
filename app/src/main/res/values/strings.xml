@@ -12,7 +12,7 @@
     <string name="help_text9">Google Material Icons (Apache license)</string>
 
     <string name="url">https://github.com/petabyt/fudge</string>
-    <string name="motd_thing">Fudge 公开 Beta 测试版本</string>
+    <string name="motd_thing">Fudge 公开 Beta 测试版本 [Juij 汉化]</string>
     <string name="connect_to_usb">USB 连接</string>
     <string name="plugins">插件</string>
     <string name="help">帮助</string>
@@ -31,8 +31,10 @@
     <string name="getImages2">也许只有 RAW 文件？富士不允许通过 WiFi 查看 RAW:(</string>
     <string name="noImages1">相机上没有可用图像。</string>
 
-    <!-- 汉化相关 -->
-    <string name="juij">更新下载</string>
-    <string name="Juij_url" translatable="false">https://juij.eu.org/#Fudge</string>
+    <!-- 汉化相关 Start -->
+    <string name="help_text100">更新下载</string>
+    <string name="help_text100">汉化:</string>
+    <string name="help_text101">Juij</string>
+    <!-- 汉化相关 End -->
 
 </resources>
