@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">Fudge [Juij 汉化]</string>
-    <string name="help_text">该应用程序是 Fujifilm WiFi 应用程序的重新实现，请勿过分期待！没有人承诺它会比官方应用程序更好。</string>
+    <string name="app_name">Fudge</string>
+    <string name="help_text">该应用程序是 Fujifilm WiFi 应用程序的开源实现，请勿过分期待！没有人承诺它会比官方应用程序更好。</string>
     <string name="help_text2">故障排除:</string>
     <string name="help_text3">相机的 WiFi 菜单应该可以通过机身顶部的“Fn”按钮访问。</string>
     <string name="help_text3_1">在较新的相机上，可以从“回放菜单”->“无线通信”中使用</string>
     <string name="help_text4">尚不支持蓝牙，但已在路线图上！</string>
-    <string name="help_text5">请在此项目的 Github 页面上报告任何错误: https://github.com/petabyt/fudge</string>
+    <string name="help_text5">项目 Github 报告错误: https://github.com/petabyt/fudge</string>
     <string name="help_text6">制作人员:</string>
     <string name="help_text7">camlib (Apache license)</string>
     <string name="help_text8">com.jsibbold.zoomage.ZoomageView (Apache license)</string>
     <string name="help_text9">Google Material Icons (Apache license)</string>
 
-    <string name="url"></string>
-    <string name="motd_thing">Fudge 公开 Beta 测试版本</string>
+    <string name="url">[Juij 汉化] [2024-03-09] [微信公众号:非线性列车]</string>
+    <string name="motd_thing">Fudge Beta</string>
     <string name="connect_to_usb">USB 连接</string>
     <string name="plugins">插件</string>
     <string name="help">帮助</string>
@@ -20,7 +20,7 @@
     <string name="help_text11">感谢:</string>
     <string name="help_text12">\@spaqin 用于 X-S10 数据包转储</string>
     <string name="help_text13">\@mxr_1 用于蓝牙工作</string>
-    <string name="help_test14">Beta-测试: @spaqin, @matthias, @nutter</string>
+    <string name="help_test14">Beta 测试: @spaqin, @matthias, @nutter</string>
     <string name="downloading_image">正在下载图像...</string>
     <string name="connecting">正在连接...</string>
     <string name="dimensions">图片大小</string>
@@ -34,7 +34,7 @@
     <!-- 汉化相关 Start -->
     <string name="juij">更新下载</string>
     <string name="help_text100">汉化:</string>
-    <string name="help_text101">Juij [微信公众号:非线性列车]</string>
+    <string name="help_text101">Juij</string>
     <!-- 汉化相关 End -->
 
 </resources>
