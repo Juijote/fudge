@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView bottomText = ((TextView)findViewById(R.id.bottomText));
         bottomText.append(getString(R.string.url) + "\n");
-        bottomText.append("Download location: " + Backend.getDownloads() + "\n");
+        bottomText.append("下载位置: " + Backend.getDownloads() + "\n");
         bottomText.append(getString(R.string.motd_thing) + " " + BuildConfig.VERSION_NAME);
 
         findViewById(R.id.plugins).setOnClickListener(new View.OnClickListener() {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Backend.fujiConnectToCmd();
-                    Backend.print("Connected to the camera");
+                    Backend.print("连接到相机");
                     Intent intent = new Intent(MainActivity.this, Gallery.class);
                     startActivity(intent);
                 } catch (Exception e) {
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Backend.connectUSB(MainActivity.this);
-                    Backend.print("Connected to the camera");
+                    Backend.print("连接到相机");
                     Intent intent = new Intent(MainActivity.this, Gallery.class);
                     startActivity(intent);
                 } catch (Exception e) {

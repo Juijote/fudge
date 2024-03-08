@@ -29,12 +29,12 @@ public class Backend extends CamlibBackend {
         UsbManager man = (UsbManager)ctx.getSystemService(Context.USB_SERVICE);
         usb.getUsbDevices(man);
 
-        Backend.print("Trying to get permission...");
+        Backend.print("试图获得许可...");
         usb.waitPermission(ctx);
 
         for (int i = 0; i < 100; i++) {
             if (usb.havePermission()) {
-                Log.d("perm", "Have USB permission");
+                Log.d("perm", "有 USB 权限");
                 continueOpenUSB();
                 break;
             }
@@ -68,7 +68,7 @@ public class Backend extends CamlibBackend {
         int rc = cConnectNative(Backend.FUJI_IP, Backend.FUJI_CMD_PORT);
         if (rc != 0) {
             if (BuildConfig.DEBUG) {
-                Backend.print("Trying emulator IP..");
+                Backend.print("尝试模拟 IP...");
                 rc = cConnectNative(Backend.FUJI_EMU_IP, Backend.FUJI_CMD_PORT);
                 chosenIP = Backend.FUJI_EMU_IP;
             }
@@ -136,7 +136,7 @@ public class Backend extends CamlibBackend {
 
     public static JSONObject fujiGetUncompressedObjectInfo(int handle) throws Exception {
         String resp = cFujiGetUncompressedObjectInfo(handle);
-        if (resp == null) throw new Exception("Failed to get obj info");
+        if (resp == null) throw new Exception("获取 obj 信息失败");
         return new JSONObject(resp);
     }
 
@@ -190,6 +190,6 @@ public class Backend extends CamlibBackend {
                 Gallery.instance.setTitleCamName(value);
                 return;
         }
-        Log.d("fudge", "Unknown update key " + key);
+        Log.d("fudge", "未知更新密钥 " + key);
     }
 }

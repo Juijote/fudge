@@ -80,7 +80,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             int id = req.object_id;
             byte[] jpegByteArray = Backend.cPtpGetThumb(id);
             if (jpegByteArray == null) {
-                Backend.reportError(Backend.PTP_IO_ERR, "Failed to get thumbnail");
+                Backend.reportError(Backend.PTP_IO_ERR, "获取缩略图失败");
                 return;
             } else if (jpegByteArray.length == 0) {
                 // Unable to find thumbnail - assume it's a folder or non-jpeg
@@ -108,7 +108,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     }
                 });
             } catch (OutOfMemoryError e) {
-                Backend.reportError(Backend.PTP_RUNTIME_ERR, "Out of memory");
+                Backend.reportError(Backend.PTP_RUNTIME_ERR, "内存不足");
             }
         }
     }

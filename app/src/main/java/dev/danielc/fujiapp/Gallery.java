@@ -113,14 +113,14 @@ public class Gallery extends AppCompatActivity {
             public void run() {
                 int rc = Backend.cFujiSetup(Backend.chosenIP);
                 if (rc != 0) {
-                    fail(rc, "Setup error");
+                    fail(rc, "设置错误");
                     return;
                 }
 
-                Backend.print("Entering image gallery..");
+                Backend.print("进入图片库...");
                 rc = Backend.cFujiConfigImageGallery();
                 if (rc != 0) {
-                    fail(rc, "Failed to start image gallery");
+                    fail(rc, "无法启动图片库");
                     return;
                 }
 
@@ -130,7 +130,7 @@ public class Gallery extends AppCompatActivity {
                     Backend.print(getString(R.string.noImages1));
                     Backend.print(getString(R.string.getImages2));
                 } else if (objectHandles.length == 0) {
-                    Backend.print("No images available.");
+                    Backend.print("没有可用的图像");
                 } else {
                     handler.post(new Runnable() {
                         @Override
@@ -158,7 +158,7 @@ public class Gallery extends AppCompatActivity {
                             Thread.sleep(1000);
                         } catch (InterruptedException e) {}
                     } else {
-                        fail(Backend.PTP_IO_ERR, "Failed to ping camera");
+                        fail(Backend.PTP_IO_ERR, "无法 ping 通相机");
                         return;
                     }
                 }

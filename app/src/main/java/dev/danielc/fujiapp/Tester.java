@@ -32,7 +32,7 @@ public class Tester extends AppCompatActivity {
         try {
             intent = bt.getIntent();
         } catch (Exception e) {
-            fail("Failed to use bluetooth: " + e.toString());
+            fail("无法使用蓝牙: " + e.toString());
             return;
         }
 
@@ -40,11 +40,11 @@ public class Tester extends AppCompatActivity {
             try {
                 startActivityForResult(intent, 1);
             } catch (Exception e) {
-                fail("Failed to use bluetooth: permission denied (or bluetooth is off)" + e);
+                fail("无法使用蓝牙: 权限被拒绝（或蓝牙已关闭）" + e);
                 return;
             }
 
-            log("Gained access to bluetooth");
+            log("已获得蓝牙访问权限");
 
             // TODO: Finish bluetooth tests
         } else {
@@ -67,7 +67,7 @@ public class Tester extends AppCompatActivity {
         Backend.cTesterInit(this);
 
         if (Backend.cRouteLogs() == 0) {
-            log("Routing logs to memory buffer.");
+            log("将日志路由到内存缓冲区");
         }
 
         ConnectivityManager m = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -92,12 +92,12 @@ public class Tester extends AppCompatActivity {
                     }
                 }
 
-                log("Established connection, starting test");
+                log("已建立连接，开始测试");
 
                 mainTest(m);
 
                 verboseLog = Backend.cEndLogs();
-                log("Hit the copy button to share the verbose log with devs.");
+                log("点击复制按钮与开发人员共享详细日志");
             }
         }).start();
     }
@@ -139,7 +139,7 @@ public class Tester extends AppCompatActivity {
                 ClipData clip = ClipData.newPlainText("Fudge log", verboseLog);
                 clipboard.setPrimaryClip(clip);
             } else {
-                Toast.makeText(this, "Test not completed yet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "测试尚未完成", Toast.LENGTH_SHORT).show();
             }
         }
 

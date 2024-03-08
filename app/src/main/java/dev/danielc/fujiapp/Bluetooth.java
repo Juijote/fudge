@@ -101,7 +101,7 @@ public class Bluetooth {
         try {
             adapter = BluetoothAdapter.getDefaultAdapter();
         } catch (Exception e) {
-            throw new Exception("Failed to get bluetooth adapter");
+            throw new Exception("获取蓝牙适配器失败");
         }
 
         try {
@@ -109,10 +109,10 @@ public class Bluetooth {
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 return enableBtIntent;
             } else {
-                throw new Exception("Bluetooth adapter is disabled");
+                throw new Exception("蓝牙适配器被禁用");
             }
         } catch (Exception e) {
-            throw new Exception("Failed to get bluetooth request intent");
+            throw new Exception("无法获取蓝牙请求");
         }
     }
 
@@ -121,7 +121,7 @@ public class Bluetooth {
         Set<BluetoothDevice> bondedDevices = adapter.getBondedDevices();
         if (bondedDevices != null) {
             for (BluetoothDevice device : bondedDevices) {
-                Backend.print("Currently connected to " + device.getName());
+                Backend.print("目前连接到 " + device.getName());
             }
         }
         return null; // No connected device found
@@ -131,7 +131,7 @@ public class Bluetooth {
         context = c;
         if (dev != null) {
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)!=PackageManager.PERMISSION_GRANTED) {
-                throw new Exception("Bluetooth permission denied");
+                throw new Exception("蓝牙权限被拒绝");
             }
             gatt = dev.connectGatt(context, false, callback);
         }

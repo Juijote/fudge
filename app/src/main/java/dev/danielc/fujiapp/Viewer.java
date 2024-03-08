@@ -100,7 +100,7 @@ public class Viewer extends AppCompatActivity {
                 try {
                     fos.close();
                     this.scanImage(filename);
-                    Toast.makeText(Viewer.this, "Saved to " + filename, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Viewer.this, "保存至 " + filename, Toast.LENGTH_SHORT).show();
                     fileIsDownloaded = true;
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -121,7 +121,7 @@ public class Viewer extends AppCompatActivity {
     public void share() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse("file://" + Backend.getDownloads() + File.separator + filename), "image/jpeg");
+        intent.setDataAndType(Uri.parse("文件://" + Backend.getDownloads() + File.separator + filename), "image/jpeg");
         this.startActivity(intent);
     }
 
@@ -139,8 +139,8 @@ public class Viewer extends AppCompatActivity {
 
         int rc = Backend.cFujiDownloadFile(handle, saveDir + File.separator + filename);
         if (rc != 0) {
-            toast("Download Error");
-            Backend.reportError(Backend.PTP_IO_ERR, "Download error");
+            toast("下载错误");
+            Backend.reportError(Backend.PTP_IO_ERR, "下载错误");
             return; // TODO: exit Viewer?
         }
 
@@ -194,7 +194,7 @@ public class Viewer extends AppCompatActivity {
             int imgY = jsonObject.getInt("imgHeight");
 
             if (filename.endsWith(".MOV")) {
-                toast("MOV playback not supported yet");
+                toast("尚不支持 MOV 播放");
                 return;
             }
 
@@ -212,7 +212,7 @@ public class Viewer extends AppCompatActivity {
             try {
                 fileByteData = new byte[size];
             } catch (OutOfMemoryError e) {
-                toast("Not enough memory to preview file");
+                toast("内存不足，无法预览文件");
                 notEnoughMemoryToPreview = true;
                 downloadFileManually(handle, size);
                 return;
@@ -221,10 +221,10 @@ public class Viewer extends AppCompatActivity {
             Backend.cSetProgressBarObj(Viewer.progressBar, size);
             int rc = Backend.cFujiGetFile(handle, fileByteData, size);
             if (rc == Backend.PTP_CHECK_CODE) {
-                toast("Can't download this file");
+                toast("无法下载该文件");
                 return;
             } else if (rc != 0) {
-                fail(Backend.PTP_IO_ERR, "Failed to download image");
+                fail(Backend.PTP_IO_ERR, "下载图片失败");
                 return;
             }
 

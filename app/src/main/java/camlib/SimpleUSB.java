@@ -36,12 +36,12 @@ public class SimpleUSB {
     }
 
     public void waitPermission(Context ctx) throws Exception {
-        Backend.print("Trying to get permission...");
+        Backend.print("试图获得许可...");
         PendingIntent permissionIntent = PendingIntent.getBroadcast(
                 ctx, 0, new Intent(ctx.getPackageName() + ".USB_PERMISSION"), PendingIntent.FLAG_IMMUTABLE);
 
         if (permissionIntent == null) {
-            throw new Exception("USB permissions denied!");
+            throw new Exception("USB 权限被拒绝！");
         }
 
         inMan.requestPermission(dev, permissionIntent);
@@ -56,17 +56,17 @@ public class SimpleUSB {
             if (ep.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK) {
                 if (ep.getDirection() == UsbConstants.USB_DIR_OUT) {
                     endpointOut = ep;
-                    Log.d("usb", "Endpoint out: " + endpointOut.getAddress());
+                    Log.d("usb", "端点输出: " + endpointOut.getAddress());
                     //max = ep.getMaxPacketSize();
                 } else {
                     endpointIn = ep;
-                    Log.d("usb", "Endpoint in: " + endpointIn.getAddress());
+                    Log.d("usb", "端点输入: " + endpointIn.getAddress());
                 }
             }
         }
 
         if (endpointOut == null || endpointIn == null) {
-            throw new Exception("Could not find a USB endpoint.");
+            throw new Exception("找不到 USB 端点");
         }
     }
 
@@ -81,7 +81,7 @@ public class SimpleUSB {
             }
         }
 
-        throw new Exception("Could not find a USB device.");
+        throw new Exception("找不到 USB 设备");
     }
 
     // Loop till we hit the first PTP device
@@ -93,13 +93,13 @@ public class SimpleUSB {
             }
         }
 
-        throw new Exception("Could not find a USB interface.");
+        throw new Exception("找不到 USB 接口");
     }
 
     public void openConnection() throws Exception {
         connection = inMan.openDevice(dev);
         if (connection == null) {
-            throw new Exception("Could not connect to the USB device.");
+            throw new Exception("无法连接到 USB 设备");
         }
     }
 
