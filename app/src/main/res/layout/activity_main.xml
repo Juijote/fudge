@@ -58,6 +58,16 @@
             android:layout_height="wrap_content"
             android:text="@string/help" />
 
+        <!-- 汉化相关 Start -->
+        <Button 
+            android:id="@+id/juij"
+            style="@style/GreyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/juij"
+            android:onClick="juij"/>
+        <!-- 汉化相关 End -->
+
     </LinearLayout>
 
     <TextView

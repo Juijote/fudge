@@ -78,6 +78,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
+            <!-- 汉化相关 Start -->
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:text="@string/help_text100"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/help_text101" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!-- 汉化相关 End -->
+
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"

@@ -41,17 +41,17 @@ public class WiFiComm {
         ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
             @Override
             public void onAvailable(Network network) {
-                Log.d(TAG, "Wifi network is available");
+                Log.d(TAG, "Wifi 网络可用");
                 wifiDevice = network;
             }
             @Override
             public void onLost(Network network) {
-                Log.e(TAG, "Lost network\n");
+                Log.e(TAG, "失去网络\n");
                 wifiDevice = null;
             }
             @Override
             public void onUnavailable() {
-                Log.e(TAG, "Network unavailable\n");
+                Log.e(TAG, "网络不可用\n");
                 wifiDevice = null;
             }
         };
@@ -68,13 +68,13 @@ public class WiFiComm {
     public static Network getWiFiNetwork() throws Exception {
         NetworkInfo wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         if (!wifiInfo.isAvailable()) {
-            throw new Exception("WiFi is not available.");
+            throw new Exception("WiFi 网络不可用");
         } else if (!wifiInfo.isConnected()) {
-            throw new Exception("Not connected to a WiFi network.");
+            throw new Exception("未连接到 WiFi 网络");
         }
 
         if (wifiDevice == null) {
-            throw new Exception("Not connected to WiFi.");
+            throw new Exception("未连接至 WiFi");
         }
 
         return wifiDevice;

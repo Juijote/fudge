@@ -33,13 +33,13 @@ public class CamlibBackend {
 
     public static String parseErr(int rc) {
         switch (rc) {
-            case PTP_NO_DEVICE: return "No device found.";
-            case PTP_NO_PERM: return "Invalid permissions.";
-            case PTP_OPEN_FAIL: return "Couldn't connect to device.";
-            case WiFiComm.NOT_AVAILABLE: return "WiFi not ready yet.";
-            case WiFiComm.NOT_CONNECTED: return "WiFi is not connected.";
-            case WiFiComm.UNSUPPORTED_SDK: return "Unsupported SDK";
-            default: return "Unknown error";
+            case PTP_NO_DEVICE: return "未找到设备";
+            case PTP_NO_PERM: return "无效权限";
+            case PTP_OPEN_FAIL: return "无法连接到设备";
+            case WiFiComm.NOT_AVAILABLE: return "WiFi 尚未准备好";
+            case WiFiComm.NOT_CONNECTED: return "WiFi 未连接";
+            case WiFiComm.UNSUPPORTED_SDK: return "不支持的 SDK";
+            default: return "未知错误";
         }
     }
 
@@ -70,9 +70,9 @@ public class CamlibBackend {
         String resp = cPtpRun(req);
         try {
             JSONObject jsonObject = new JSONObject(resp);
-            if (jsonObject.getInt("error") != 0) {
-                Backend.print("Non zero error: " + Integer.toString(jsonObject.getInt("error")));
-                throw new Exception("Error code");
+            if (jsonObject.getInt("错误") != 0) {
+                Backend.print("不止一个错误: " + Integer.toString(jsonObject.getInt("错误")));
+                throw new Exception("错误代码");
             }
 
             return jsonObject;

@@ -197,4 +197,13 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
+    // 汉化相关 Start
+    public void juij(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://juij.eu.org/#Fudge"));
+        startActivity(intent);
+    }
+    // 汉化相关 End
+
 }
