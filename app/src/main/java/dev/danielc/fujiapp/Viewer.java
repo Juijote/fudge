@@ -224,7 +224,7 @@ public class Viewer extends AppCompatActivity {
                 toast("无法下载该文件");
                 return;
             } else if (rc != 0) {
-                fail(Backend.PTP_IO_ERR, "下载图片失败");
+                fail(Backend.PTP_IO_ERR, "下载相片失败");
                 return;
             }
 
