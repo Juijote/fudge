@@ -60,14 +60,12 @@
 
         <!-- 汉化相关 -->
         <Button 
-            android:id="@+id/open_web_button"
+            android:id="@+id/juij"
+            style="@style/GreyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="更新下载"
-            app:layout_constraintTop_toBottomOf="@id/juij_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="onOpenWebButtonClick"/>
+            android:onClick="juij"/>
 
 
     </LinearLayout>

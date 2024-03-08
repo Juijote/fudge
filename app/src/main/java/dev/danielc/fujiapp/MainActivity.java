@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 汉化相关
-    public void onOpenWebButtonClick(View view) {
+    public void juij(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://juij.eu.org/#Fudge"));
         startActivity(intent);
