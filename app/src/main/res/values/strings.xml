@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fudge</string>
+    <string name="app_name">Fudge [Juij 汉化]</string>
     <string name="help_text">该应用程序是 Fujifilm WiFi 应用程序的重新实现，请勿过分期待！没有人承诺它会比官方应用程序更好。</string>
     <string name="help_text2">故障排除:</string>
     <string name="help_text3">相机的 WiFi 菜单应该可以通过机身顶部的“Fn”按钮访问。</string>
@@ -11,8 +11,8 @@
     <string name="help_text8">com.jsibbold.zoomage.ZoomageView (Apache license)</string>
     <string name="help_text9">Google Material Icons (Apache license)</string>
 
-    <string name="url">https://github.com/petabyt/fudge</string>
-    <string name="motd_thing">Fudge 公开 Beta 测试版本 [Juij 汉化]</string>
+    <string name="url"></string>
+    <string name="motd_thing">Fudge 公开 Beta 测试版本</string>
     <string name="connect_to_usb">USB 连接</string>
     <string name="plugins">插件</string>
     <string name="help">帮助</string>
@@ -27,7 +27,7 @@
     <string name="filesize">文件大小</string>
     <string name="alreadydownloaded">文件已下载</string>
     <string name="regressiontesting">回归测试</string>
-    <string name="gallery">画廊</string>
+    <string name="gallery">图片库</string>
     <string name="getImages2">也许只有 RAW 文件？富士不允许通过 WiFi 查看 RAW:(</string>
     <string name="noImages1">相机上没有可用图像。</string>
 
