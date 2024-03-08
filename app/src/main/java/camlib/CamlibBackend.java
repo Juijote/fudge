@@ -37,9 +37,9 @@ public class CamlibBackend {
             case PTP_NO_PERM: return "Invalid permissions.";
             case PTP_OPEN_FAIL: return "Couldn't connect to device.";
             case WiFiComm.NOT_AVAILABLE: return "WiFi not ready yet.";
-            case WiFiComm.NOT_CONNECTED: return "WiFi is not connected.";
-            case WiFiComm.UNSUPPORTED_SDK: return "Unsupported SDK";
-            default: return "Unknown error";
+            case WiFiComm.NOT_CONNECTED: return "WiFi 未连接";
+            case WiFiComm.UNSUPPORTED_SDK: return "不支持的 SDK";
+            default: return "未知错误";
         }
     }
 
